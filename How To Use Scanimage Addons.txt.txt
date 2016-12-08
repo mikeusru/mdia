@@ -1,0 +1,3 @@
+All relevant files are contained in Scanimage 3.8.1 addons folder. To use, unzip the folder and add contained files to your scanimage path. For a detailed tutorial on using the software, extract 'Tutorials.zip' and open "Scanimage 3.8.1 Uncaging Automation Tutorial".
+
+Bulk of the addon code written by Michael Smirnov at Max Planck Florida Institute for Neuroscience. Check back for bug fixes and updates.
