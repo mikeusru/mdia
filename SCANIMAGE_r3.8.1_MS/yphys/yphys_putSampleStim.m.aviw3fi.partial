@@ -1,0 +1,96 @@
+function yphys_putSampleStim
+%dwell in milisecond.
+
+global state;
+global gh;
+
+%set(state.yphys.init.phys, 'SampleRate', state.yphys.acq.outputRate, 'RepeatOutput', 0);
+ext = get(gh.yphys.stimScope.ext, 'value');
+ap = get(gh.yphys.stimScope.ap, 'value'); %state.yphys.acq.ap;
+uncage=get(gh.yphys.stimScope.Uncage, 'value');   %state.yphys.acq.uncage;
+stim = get(gh.yphys.stimScope.Stim, 'value');
+theta = get(gh.yphys.stimScope.theta, 'Value');
+
+if ap
+    param = state.yphys.acq.pulse{1,state.yphys.acq.pulseN};
+    rate = param.freq;
+    nstim = param.nstim;
+    dwell = param.dwell;
+    amp = param.amp;
+    delay = param.delay;
+    sLength = state.yphys.acq.sLength(state.yphys.acq.pulseN);
+    if isfield(param, 'addP')
+        addP = param.addP;
+    else
+        addP = -1;
+    end
+    a_ap = yphys_mkPulse(rate, nstim, dwell, amp, delay, sLength, addP, 'ap');
+    a = ap;
+end
+if stim
+    param = state.yphys.acq.pulse{2,state.yphys.acq.pulseN};
+    rate = param.freq;
+    nstim = param.nstim;
+    dwell = param.dwell;
+    amp = param.amp;
+    delay = param.delay;
+    sLength = state.yphys.acq.sLength(state.yphys.acq.pulseN);
+    if isfield(param, 'addP')
+        addP = param.addP;
+    else
+        addP = -1;
+    end    
+    a_stim = yphys_mkPulse(rate, nstim, dwell, amp, delay, sLength, addP, 'stim')/1000;
+    %a = a_stim;
+end
+
+%%%INPUT
+if ap
+    n = length(a_ap);
+elseif stim
+    n = length(a_stim);
+else
+    n = [];
+end
+
+nSamples = round(n*state.yphys.acq.inputRate/state.yphys.acq.outputRate);
+set(state.yphys.init.phys_input, 'sampQuantSampPerChan', nSamples);
+set(state.yphys.init.phys_input, 'everyNSamples', nSamples);
+set(state.yphys.init.phys_input, 'everyNSamplesEventCallbacks', @yphys_getData);
+
+%%%patch
+if ap  %%%ap means patch clamp!!!!!!
+    if ~state.yphys.acq.cclamp
+        a_ap = a_ap/state.yphys.acq.commandSensV;
+    else
+        a_ap = a_ap/state.yphys.acq.commandSensC;
+	end
+% 
+% 	set(state.yphys.init.phys_patch, 'SampleRate', state.yphys.acq.outputRate);
+% 	set(state.yphys.init.phys_patch, 'RepeatOutput', 0); 
+end
+
+if stim
+    state.yphys.acq.physOutputData_stim = a_stim;
+end
+if ap
+    state.yphys.acq.physOutputData_ap = a_ap;
+end
+
+if ap && ~stim
+    a_stim = 0 * a_ap;
+
+elseif ~ap && stim
+    a_ap = 0*a_stim;
+elseif ap && stim
+end
+
+%figure; plot([a_ap(:), a_stim(:)]);
+
+if ap || stim
+    state.yphys.init.phys_both.set('sampClkRate', state.yphys.acq.outputRate);
+    state.yphys.init.phys_both.set('sampQuantSampPerChan', length(a_ap));
+    state.yphys.init.phys_both.writeAnalogData([a_ap(:), a_stim(:)]);
+end
+
+    %

@@ -1,0 +1,120 @@
+﻿<html>
+	
+<head>
+	<title>Installation</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.8.0.849">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "Scanimage 3.8.1 Uncaging Automation Tutorial.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Installation");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Installation</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="GettingStarted.html">Getting Started</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="GettingStarted.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Introduction.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="RunningtheSoftware.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps2"><span class="rvts15">Know before you start...</span></p>
+<p class="rvps6"><span class="rvts14"><br/></span></p>
+<p class="rvps6"><span class="rvts14">Like all things Scanimage, this version is essentially always in beta, and is therefore prone to various bugs. Therefore, to insure you can still run your experiments even if the new software fails, you will not be required to overwrite your old program, and you can switch back to what you were using any time you like.</span></p>
+<p class="rvps6"><span class="rvts14"><br/></span></p>
+<p class="rvps6"><span class="rvts14">Note: The version of FLIMimage seems to differ a lot across machines, so your version may not necessarily be the same as the one bundled with this software. If you run into errors, an older version of FLIMimage is available which supports this package.</span></p>
+<p class="rvps6"><span class="rvts14"><br/></span></p>
+<p class="rvps2"><span class="rvts15">Initial Installation (Updated)</span></p>
+<p class="rvps2"><span class="rvts15"><br/></span></p>
+<p class="rvps6"><span class="rvts18">1.</span><span class="rvts14"> Download the updateScanimageVersion.m file - this file will install the upgrade for you. From MATLAB, right click on the file and select 'RUN'. The window below will open. Select which settings files you want to keep. If unsure, leave all of them selected. FLIM, SPC, and ypys are more likely to need replacing if you get bugs. </span></p>
+<p class="rvps6"><span class="rvts14"><br/></span></p>
+<p class="rvps6"><span class="rvts14">The installation file will back up your old Scanimage version and put the new version in the old version's folder, keeping the settings files of your choice. If you want to switch between multiple matlab versions, create a new folder named SCANIMAGE_r3.8.1_MS and set this as your Old Directory. </span></p>
+<p class="rvps6"><span class="rvts14"><br/></span></p>
+<p class="rvps6"><span class="rvts14">Select your directories - the Old directory is the scanimage folder you currently use (SCANIMAGE_r3.8.1_MS), and the new directory is the new scanimage version you want to install. Once you click 'done', this script will back up your old Scanimage directory and transfer the new program to the old location without overwriting the files you chose to keep. Make sure the folder you are using is named SCANIMAGE_r3.8.1_MS - if not, rename it. </span></p>
+<p class="rvps6"><span class="rvts14"><br/></span></p>
+<p class="rvps6"><img alt="" style="padding : 1px;" src="lib/upgrade options.png"></p>
+<p class="rvps6"><span class="rvts14"><br/></span></p>
+<p class="rvps6"><span class="rvts18">3.</span><span class="rvts14"> Open MATLAB. Navigate to your main MATLAB folder:</span></p>
+<p class="rvps6"><span class="rvts14"><br/></span></p>
+<p class="rvps6"><img alt="" style="padding : 1px;" src="lib/NewItem.png"></p>
+<p class="rvps6"><span class="rvts14"><br/></span></p>
+<p class="rvps6"><span class="rvts18">4.</span><span class="rvts14"> In the folder browser, right click on the highlighted folder (your old Scanimage version), select Remove from path, Selected Folders and Subfolders</span></p>
+<p class="rvps6"><span class="rvts14"><br/></span></p>
+<p class="rvps6"><img alt="" style="padding : 1px;" src="lib/NewItem1.png"></p>
+<p class="rvps6"><span class="rvts14"><br/></span></p>
+<p class="rvps6"><span class="rvts18">5.</span><span class="rvts14"> Now, right-click your new version, select 'Add to Path', 'Select Folders and Subfolders'. The new version should be highlighted:</span></p>
+<p class="rvps6"><span class="rvts14"><br/></span></p>
+<p class="rvps6"><img alt="" style="padding : 1px;" src="lib/NewItem2.png"></p>
+<p class="rvps6"><span class="rvts14"><br/></span></p>
+<p class="rvps6"><span class="rvts18">6. </span><span class="rvts14">You will need to repeat steps 4 and 5 every time you launch the new Scanimage until you are comfortable using it. Once you are sure it works for you, you can set the 3.8.1 folder as a default path in Home -&gt; Set Path.</span></p>
+<p class="rvps6"><span class="rvts14"><br/></span></p>
+<p class="rvps6"><span class="rvts18">7. </span><span class="rvts14">Double-click open the mdia_settings file (or enter the command </span><span class="rvts18">edit mdia_settings.m</span><span class="rvts14"> in the command window) to set a few initial settings.</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li style="margin-left: 0px" class="rvps7"><span class="rvts14">The FOV width and height (245 and 285) should work fine if you're using a 60x objective, otherwise they will need to be changed.</span></li>
+<li style="margin-left: 0px" class="rvps7"><span class="rvts14">Unless you're sure it's installed in your system, make sure the etlOn and resetOn properties are set to 0. If they are, none of their child properties are important.</span></li>
+</ul></ul>
+<p class="rvps6"><span class="rvts14"><br/></span></p>
+<p class="rvps6"><span class="rvts18">8. </span><span class="rvts14">Save the mdia_settings.m file and close it. You're all set to start!</span></p>
+<p></p>
+<p class="rvps5"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="http://www.helpndoc.com/feature-tour/create-ebooks-for-amazon-kindle">Generate Kindle eBooks with ease</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; Michael Smirnov, Max Planck Florida Institute for Neuroscience. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

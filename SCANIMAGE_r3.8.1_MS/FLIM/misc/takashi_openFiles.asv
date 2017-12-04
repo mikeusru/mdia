@@ -1,0 +1,35 @@
+function a = takashi_openFiles(basename, num)
+
+delete(findobj('Tag', 'Takashi'))
+i = 1;
+for j=num
+    str1 = '000';
+    str2 = num2str(j);
+    str1(end-length(str2)+1:end) = str2;
+    filename1 = [basename, str1, 'max.tif'];
+    info = imfinfo (filename1);
+    a.img{i} = imread(filename1);
+    a.num(i) = j;
+    if length(info) > 1
+        a.red{i} = imread(filename1, 2);
+    end
+    figure('name', num2str(j), 'Tag', 'Takashi'); 
+    imagesc(a.img{i});
+    ROI_spine1 = [70   24    16    16];
+    ROI_spine2 = [50   24    16    16];
+    ROI_spine3 = [30   24    16    16];
+    ROI_spine4 = [10   24    16    16];
+    ROI_background = [3 3    16    16];
+    TagN1 = ['Ts1', num2str(j)];
+    TagN2 = ['Ts2', num2str(j)];
+    TagN3 = ['Ts3', num2str(j)];
+    TagN4 = ['Ts4', num2str(j)];
+    TagNb = ['Tb', num2str(j)];
+
+    rectangle('Position', ROI_spine1, 'EdgeColor', 'green', 'ButtonDownFcn', 'r_dragRoi2', 'Tag', TagN1);
+    rectangle('Position', ROI_spine1, 'EdgeColor', 'white', 'ButtonDownFcn', 'r_dragRoi2', 'Tag', TagN1);
+    rectangle('Position', ROI_spine1, 'EdgeColor', 'c', 'ButtonDownFcn', 'r_dragRoi2', 'Tag', TagN1);
+    rectangle('Position', ROI_spine1, 'EdgeColor', 'green', 'ButtonDownFcn', 'r_dragRoi2', 'Tag', TagN1);
+    rectangle('Position', ROI_background, 'EdgeColor', 'red', 'ButtonDownFcn', 'r_dragRoi2', 'Tag', TagNb);
+    i = i+1;
+end

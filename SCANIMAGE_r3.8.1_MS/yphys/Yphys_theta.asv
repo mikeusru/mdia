@@ -1,0 +1,39 @@
+function Yphys_theta;
+%dwell in milisecond.
+
+global state;
+
+nstim=10;
+nstimIn=10;
+rate = 100;
+Dhight = 5.05;
+outputRate = 2000;
+thetatime = 0.2;
+
+
+try
+    stop(state.spc.init.phys);
+    stop(state.spc.init.phys_input);
+    stop(state.spc.init.phys_setting);
+catch
+end
+
+yphys_setup;
+
+set(state.spc.init.phys, 'SampleRate', outputRate);
+set(state.spc.init.phys, 'TriggerType', 'Immediate');
+state.spc.init.phys_stim = addchannel(state.spc.init.phys, state.spc.init.phys_stimChannelIndex);
+set(state.spc.init.phys, 'RepeatOutput', nstim); 
+%samplelength = ceil(state.acq.outputRate*seconds);
+binfactor = round(outputRate/ rate);
+a = zeros(binfactor, 1);
+a(1) = Dhight;
+
+a = repmat(a, nstimIn, 1);
+blank = zeros(outputRate*thetatime-length(a), 1);
+a= [a; blank];
+
+putdata(state.spc.init.phys, a(:));
+
+start(state.spc.init.phys);
+%

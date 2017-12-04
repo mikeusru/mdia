@@ -1,0 +1,5 @@
+function yphys_stimclosereq;
+global state
+global spc
+global gh
+

@@ -1,0 +1,35 @@
+function yphys_moveToImage(flag)
+global yphys;
+global gh;
+
+yphys.image.currentImage = str2num(get(gh.yphys.figure.currentImageText, 'String'));
+if flag == 1
+    yphys.image.currentImage = yphys.image.currentImage-1;
+        %try
+            %yphys_showImageTraces;
+            yphys_calcium(yphys.image.currentImage);
+%         catch
+%             yphys.image.currentImage = yphys.image.currentImage+1;
+%             yphys_showImageTraces(0);
+%         end
+elseif flag == 2
+    %if yphys.image.currentImage <= length(yphys.image.intensity)-1
+        yphys.image.currentImage = yphys.image.currentImage+1;
+        yphys_calcium(yphys.image.currentImage)
+        %end
+elseif flag == 3
+    pos = str2num(get(gh.yphys.figure.currentImageText, 'String'));
+    yphys_calcium(yphys.image.currentImage)
+        %end
+elseif flag == 4
+    yphys.image.aveImage = str2num(get(gh.yphys.figure.averageInFigure, 'String'));
+    yphys_showImageTraces;
+    yphys_calcium_offLine;
+elseif flag == 5
+    yphys.image.currentSlice = yphys.image.currentSlice-1;
+    yphys_showImageTraces(0);
+elseif flag == 6
+    yphys.image.currentSlice = yphys.image.currentSlice+1;
+    yphys_showImageTraces(0);
+end
+

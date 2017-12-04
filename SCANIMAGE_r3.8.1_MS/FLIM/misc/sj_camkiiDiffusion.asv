@@ -1,0 +1,88 @@
+function sj_camkiiDiffusion
+global state;
+global gh;
+
+numberOfFrames = 120;
+numberOfFrames_Pre = 1;
+UncageFileCounter = 3;
+
+preAcqusition = 3;
+repeatPeriod = 10; %Seconds
+postAcqusition = 50;
+
+tic;
+for i=1:preAcqusition
+    set(gh.mainControls.shutterDelay, 'String', 0);
+    genericCallback(gh.mainControls.shutterDelay);
+    updateShutterDelay;
+
+    set(gh.spc.FLIMimage.uncageEveryFrame, 'String', num2str(numberOfFrames_Pre));
+    state.spc.acq.uncageEveryXFrame = numberOfFrames;
+    
+    set(gh.standardModeGUI.numberOfSlices, 'String', num2str(numberOfFrames_Pre));
+    genericCallback(gh.standardModeGUI.numberOfSlices);
+    state.acq.numberOfZSlices=state.standardMode.numberOfZSlices;
+    updateGuiByGlobal('state.acq.numberOfZSlices');
+    preallocateMemory;
+    
+    executeGrabOneCallback(gh.mainControls.grabOneButton);
+    pause(repeatPeriod - toc);
+    tic;
+end
+
+set(gh.mainControls.shutterDelay, 'String', 1);
+genericCallback(gh.mainControls.shutterDelay);
+updateShutterDelay;
+
+set(gh.spc.FLIMimage.uncageEveryFrame, 'String', num2str(numberOfFrames));
+state.spc.acq.uncageEveryXFrame = numberOfFrames;
+
+set(gh.standardModeGUI.numberOfSlices, 'String', num2str(numberOfFrames));
+genericCallback(gh.standardModeGUI.numberOfSlices);
+state.acq.numberOfZSlices=state.standardMode.numberOfZSlices;
+updateGuiByGlobal('state.acq.numberOfZSlices');
+preallocateMemory;
+
+set(gh.standardModeGUI.averageFrames, 'Value', 0);
+genericCallback(gh.standardModeGUI.averageFrames);
+state.acq.averaging=state.standardMode.averaging;
+updateHeaderString('state.acq.averaging');
+preallocateMemory;
+%%%%
+if state.spc.acq.SPCdata.mode == 2
+	state.spc.acq.SPCdata.trigger = 1;
+    if FLIM_setupScanning(0)
+        return;
+    end
+	state.internal.whatToDo=2;
+    state.spc.acq.page = 0;
+    hObject = gh.spc.FLIMimage.grab;
+    handles = gh.spc.FLIMimage;
+	FLIM_Measurement(hObject, handles);
+end
+%%%%
+
+set(gh.mainControls.shutterDelay, 'String', 0);
+genericCallback(gh.mainControls.shutterDelay);
+updateShutterDelay;
+
+set(gh.standardModeGUI.numberOfSlices, 'String', num2str(numberOfFrames_Pre));
+genericCallback(gh.standardModeGUI.numberOfSlices);
+state.acq.numberOfZSlices=state.standardMode.numberOfZSlices;
+updateGuiByGlobal('state.acq.numberOfZSlices');
+preallocateMemory;
+
+set(gh.spc.FLIMimage.uncageEveryFrame, 'String', num2str(numberOfFrames_Pre));
+state.spc.acq.uncageEveryXFrame = numberOfFrames;   
+
+pause(repeatPeriod - toc);
+tic;
+
+for i=1:postAcqusition
+ 
+    executeGrabOneCallback(gh.mainControls.grabOneButton);
+    pause(repeatPeriod - toc);
+    tic;
+end
+
+

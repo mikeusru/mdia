@@ -1,0 +1,123 @@
+﻿<html>
+	
+<head>
+	<title>Group by FOV (FOVgui)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.8.0.849">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "Scanimage 3.8.1 Uncaging Automation Tutorial.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("GroupbyFOVFOVgui");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Group by FOV (FOVgui)</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="UsingtheSoftware.html">Using the Software</a> &rsaquo;&rsaquo; <a href="WindowGuide.html">Window Guide</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="WindowGuide.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="DriftCorrectionOptionsforMultipo.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts11">Group by FOV (FOVgui)</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps8"><img alt="" style="padding : 1px;" src="lib/NewItem19.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps10"><span class="rvts0"><span class="rvts25"><br/></span></span></h3>
+<h3 class="rvps10"><span class="rvts0"><span class="rvts25">Note: although it is currently possible to create multiple FOVs, this is not fully supported/tested by the software. Only use one FOV.</span></span></h3>
+<h3 class="rvps10"><span class="rvts0"><span class="rvts25"><br/></span></span></h3>
+<h3 class="rvps10"><span class="rvts0"><span class="rvts25"><br/></span></span></h3>
+<h3 class="rvps10"><span class="rvts0"><span class="rvts25"><br/></span></span></h3>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps10"><span class="rvts0"><span class="rvts25">Add FOV</span></span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps2"><span class="rvts6">Add an FOV to group the displayed motor positions. Once the FOV is added, you can drag it around to include all the positions. For imaging quality, It is better to have the positions at the center of the FOV.</span></li>
+</ul></ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps10"><span class="rvts0"><span class="rvts25">Clear FOV</span></span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps2"><span class="rvts6">Clear the current FOV(s)</span></li>
+</ul></ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps10"><span class="rvts0"><span class="rvts25">Save FOV and Translate Motor Positions</span></span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps2"><span class="rvts6">Once an FOV is set, this button saves it and translates the XY motor positions to Scan Shift positions. Therefore, only the Z motor will move between positions, while the XY motor will remain constant.</span></li>
+</ul></ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps10"><span class="rvts0"><span class="rvts25">Reset</span></span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps2"><span class="rvts6">Use to deal with any errors generated in the FOVgui.</span></li>
+</ul></ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps10"><span class="rvts0"><span class="rvts25">Align Positions to FOV</span></span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps2"><span class="rvts6">Once motor positions are translated to an FOV, this button can be used to automatically align them all to their new motor position and scan shift by using their reference images. BUT, this doesn't always work and can mess up your positions even more, so I suggest to do this step manually unless you're confident that it will work.</span></li>
+</ul></ul>
+<p></p>
+<p class="rvps5"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="http://www.helpndoc.com/feature-tour">Easily create Help documents</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; Michael Smirnov, Max Planck Florida Institute for Neuroscience. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

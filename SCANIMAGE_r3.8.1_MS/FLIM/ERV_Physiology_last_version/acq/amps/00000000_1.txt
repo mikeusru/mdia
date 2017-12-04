@@ -1,0 +1,10 @@
+Serial_Number: 00000000
+Channel_ID: 1
+Mode: V-Clamp
+Primary_Scale_Factor: 0.5
+Primary_Scale_Factor_Units: 6
+Primary_Gain: 10
+Secondary_Scale_Factor: 10
+Secondary_Scale_Factor_Units: 0
+Secondary_Gain: 1
+External_Cmd_Sens: 0.02

@@ -1,0 +1,114 @@
+function Aout = r_calcRoi(num)
+
+fh = 401;
+color_a = {'green', 'red', 'white', 'cyan', 'magenda'};
+
+global state;
+roiobj = findobj('Tag', 'ROI');
+
+nRoi = length(roiobj);
+
+% state.internal.maxaxis(1);
+% waitforbuttonpress;
+% point1 = get(gca,'CurrentPoint');    % button down detected
+% finalRect = rbbox;                   % return figure units
+% point2 = get(gca,'CurrentPoint');    % button up detected
+% point1 = point1(1,1:2);              % extract x and y
+% point2 = point2(1,1:2);
+% p1 = min(point1,point2);             % calculate locations
+% offset = abs(point1-point2);         % and dimensions
+% %rectangle('Position', [p1, offset]);
+% ROI = round([p1, offset]);
+
+if ~nargin
+    num = state.files.fileCounter-1;
+end
+
+str1 = '000';
+str2 = num2str(num);
+str1(end-length(str2)+1:end) = str2;
+%filename1 = [basename, str1, 'max.tif'];
+filename = [state.files.savePath, state.files.baseName, str1, '.tif'];
+filenamemax = [state.files.savePath, state.files.baseName, str1, 'max.tif'];
+
+if nargin
+	[data1, header] = genericOpenTif(filenamemax); 
+	set(state.internal.maximagehandle(1), 'CData', data1(:,:,1));
+	set(state.internal.maximagehandle(2), 'CData', data1(:,:,2));
+end
+
+for j = 1:nRoi
+    set(roiobj(j), 'Visible', 'Off'); 
+    set(roiobj(j), 'Visible', 'On');
+    set(roiobj(j), 'EdgeColor', color_a{j});
+end
+
+if exist(filename)
+    [data,header]=genericOpenTif(filename);
+end
+
+for j = 1:nRoi
+    ROI = get(roiobj(j), 'Position');
+    theta = [0:1/20:1]*2*pi;
+    xr = ROI(3)/2;
+    yr = ROI(4)/2;
+    xc = ROI(1) + ROI(3)/2;
+    yc = ROI(2) + ROI(4)/2;
+    x1 = round(sqrt(xr^2*yr^2./(xr^2*sin(theta).^2 + yr^2*cos(theta).^2)).*cos(theta) + xc);
+    y1 = round(sqrt(xr^2*yr^2./(xr^2*sin(theta).^2 + yr^2*cos(theta).^2)).*sin(theta) + yc);
+    siz = size(data);
+    ROIreg = roipoly(ones(siz(1), siz(2)), x1, y1);
+    %figure; image(ROIreg);
+    
+	for i= 1: header.acq.numberOfZSlices
+
+    
+        greenim = data(:,:,i*2-1);
+        redim = data(:,:, i*2);
+%         greenim = imcrop(greenim, ROI);
+%         redim = imcrop(redim, ROI);
+%         greenval(i, j) = mean2(greenim);
+%         redval(i, j) = mean2(redim);
+        greenval(i, j) = mean2(greenim(ROIreg));
+        redval(i, j) = mean2(redim(ROIreg));
+        
+        sq = ones(3,3)/9;
+        greenim = medfilt2(greenim, [3,3]);
+        redim = medfilt2(redim, [3,3]);
+        greenmax(i, j) = max(max(greenim(ROIreg), [], 1), [], 2);
+        redmax(i,j) = max(max(redim(ROIreg), [], 1), [], 2);
+	end
+    %evalc(['Aout.position', num2str(j), '=ROI']);
+    Aout.position{j} = ROI;
+
+end
+
+    Aout.green = max(greenval);
+    Aout.greenMax = max(greenmax);
+    Aout.red = max(redval);
+    Aout.redMax = max(redmax);
+
+global state
+evalc(['global ', state.files.baseName, '_int']);
+evalc(['A1 = ', state.files.baseName, '_int']);
+state.ryohei.Roi_int{num} = Aout;
+
+for j=1:nRoi
+    A1.roiData{j}.Gave(num) = Aout.green(j);
+    A1.roiData{j}.Gmax(num) = Aout.greenMax(j);
+    A1.roiData{j}.Rave(num) = Aout.red(j);
+    A1.roiData{j}.Rmax(num) = Aout.redMax(j);
+    A1.roiData{j}.pos{num} = Aout.position{j};
+end
+
+figure(fh); 
+color_a = {'green', 'red', 'black', 'cyan', 'magenda'};
+hold off;
+for j = 1 :nRoi
+    subplot(
+    plot(A1.roiData{j}.Gave, '-o', 'color', color_a{j}); 
+    hold on;
+end;
+
+evalc([state.files.baseName, '_int = A1']);
+save([state.files.baseName, '_int'], [state.files.baseName, '_int']);

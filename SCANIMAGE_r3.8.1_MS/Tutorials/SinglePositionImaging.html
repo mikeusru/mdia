@@ -1,0 +1,99 @@
+﻿<html>
+	
+<head>
+	<title>Single-Position Imaging</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.8.0.849">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "Scanimage 3.8.1 Uncaging Automation Tutorial.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("SinglePositionImaging");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Single-Position Imaging</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="UsingtheSoftware.html">Using the Software</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="UsingtheSoftware.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="MultiPositionImaging.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="WindowGuide.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts11">Single Position Imaging</span></span></h1>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts11"><br/></span></span></h1>
+<p class="rvps2"><span class="rvts6">Follow this step-by-step tutorial to image one position over a period of time while incorporating Autofocus and automatic drift correction</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Note: the use of Autofocus requires imaging of multiple Z positions. If you image at least 3 Z slices every time, this is sufficient for continuous autofocus ("Use Acquired for Autofocus"). If you prefer to take fewer slices, then an Autofocus routine can be set to run once every few aquisitions, separate from the imaging itself.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;">
+<li value="1" class="rvps8"><span class="rvts6">Find your position of interest.</span></li>
+<li value="2" class="rvps8"><span class="rvts6">Turn on the Autofocus, Single Position mode, Continuous Drift Correction, Use Max Projection, Scan Shift, and Display AF images in the Focus and Drift Correct panel of the DIA window:</span><br/><span class="rvts6"></span><br/><img alt="" style="padding : 1px;" src="lib/NewItem11.png"><br/><span class="rvts6"></span><br/><span class="rvts6"><br/></span></li>
+<li value="3" class="rvps8"><span class="rvts6">In the "Select Ref Channel" dropdown menu, select the primary channel which you will be using for imaging (this channel will be used as a reference for autofocus and drift correction). </span></li>
+<li value="4" class="rvps8"><span class="rvts6">If you're using drift correction, click on View/Set Reference Img. This will collect a reference image to use for determining drift.</span></li>
+<li value="5" class="rvps8"><span class="rvts6">If you'd like Autofocus to work in a specific spot (a dendritic spine, for example), click "Set Spine". Next, click on the area you'd like to use in the Acquisition Channel selected in the Ref Channel. </span><span class="rvts22">Note: this does not currently work with the FLIM window, so if picking a spine, temporarily select a regular acquisition channel in "Select Ref Channel" to set spine coordinates.</span></li>
+<li value="6" class="rvps8"><span class="rvts19">If you are collecting 3 or more slices each time, select "Use Acquired for Autofocus". If you prefer for a separate Autofocus round to run every few repeats, do not select this options.</span></li>
+<li value="7" class="rvps8"><span class="rvts19">Set the "Autofocus Parameters". If using acquired images for autofocus, you only need to set the algorithm, which should probably be set to GDER by default. If not using acquired images, set the Z range and Z step of the autofocus routine, and select the repeat interval for Autofocus to run. Note: if using FLIM, the separate Autofocus routine will run in Channel 1.</span><br/><span class="rvts19"></span><br/><img alt="" style="padding : 1px;" src="lib/NewItem13.png"></li>
+<li value="8" class="rvps8"><span class="rvts19">You're all set! Press LOOP to start. Whenever Autofocus runs, a window will pop up showing the images used for autofocus, the ROI which the autofocus routine used (red square), and the best-focused position (Green Square). The Z value reflects the absolute motor Z position.</span><br/><span class="rvts19"></span><br/><img alt="" style="padding : 1px;" src="lib/NewItem14.png"></li>
+</ol>
+<p></p>
+<p class="rvps5"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="http://www.helpndoc.com/help-authoring-tool">Free help authoring environment</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; Michael Smirnov, Max Planck Florida Institute for Neuroscience. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

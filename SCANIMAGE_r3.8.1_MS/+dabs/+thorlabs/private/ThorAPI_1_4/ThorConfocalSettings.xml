@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ThorConfocalSettings>
+  <ClockSource clockSource="1" clockRate="80000000" clockEdge="1">   
+  </ClockSource>
+  <Configuration field2Theta="0.0901639344" crsFrequency="7931.47208" yScaler="100" xCoef1="0.0" xCoef2="11.0909" xCoef3="0.0" xCoef4="0.0" xCoef5="0.0" xCoef6="0.0" xCoef7="0.0" xCoef8="0.0"/>
+  <!--<Configuration field2Theta="0.0901639344" crsFrequency="7931.47208" yScaler="100" xCoef1="0.0" xCoef2="11.0909" xCoef3="0.0" xCoef4="0.0" xCoef5="0.0" xCoef6="0.0" xCoef7="0.0" xCoef8="0.0"/>-->
+  <Dma bufferCount="4"/>
+</ThorConfocalSettings>

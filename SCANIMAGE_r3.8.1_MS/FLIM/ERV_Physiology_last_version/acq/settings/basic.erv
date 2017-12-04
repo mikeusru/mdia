@@ -1,0 +1,153 @@
+%1) Acquisition device: 1=nidaq 2=winsound.
+1
+
+%2) Default acquisition board: 1=Uses the default acquisition board 0=Selects the board manually.
+1 
+
+%3) Trigger Channel/s: Enter "nan" for continuous mode (no trigger). Separate with commas if more than one (different triggers for amplifier 1 and 2 for example). 
+16
+
+%4) Amplifier 1 Channel 1: Enter "nan" if you don't want to acquire, or the channel number using NIDAQ nomenclature (0 to 31 for PCI 6959). 
+nan
+
+%5) Amplifier 1 Channel 2: Enter "nan" if you don't want to acquire, or the channel number using NIDAQ nomenclature (0 to 31 for PCI 6959).
+1
+
+%6) Amplifier 2 Channel 1: Enter "nan" if you don't want to acquire, or the channel number using NIDAQ nomenclature (0 to 31 for PCI 6959).
+nan
+
+%7) Amplifier 2 Channel 2: Enter "nan" if you don't want to acquire, or the channel number using NIDAQ nomenclature (0 to 31 for PCI 6959).
+nan
+
+%8) Test pulse amplitude in mV.
+-5
+
+%9) Test pulse length in ms.
+25
+
+%10) Length of the window (in ms) over which peak current is searched to calculate series resistance.
+5
+
+%11) Length of the window (in ms) over which current is averaged to calculate input resistance.
+5
+
+%12) Membrane capacitance calculation: 1=Performs the calculation 0=It does not calculate Cm
+0
+
+%13) Acquisition rate for the seal test in Hz.
+10000
+
+%14) Sweep length in ms.
+10000
+
+%15) Inter-sweep interval in ms.
+0
+
+%16) Number of sweeps to acquire (inf is a valid entry).
+1
+
+%17) Recording channel number 5 (1 to 4 are reserved for the amplifiers. Defaults number 4 to 7).
+nan
+
+%18) Recording channel number 6 (1 to 4 are reserved for the amplifiers. Defaults number 4 to 7).
+nan
+
+%19) Recording channel number 7 (1 to 4 are reserved for the amplifiers. Defaults number 4 to 7).
+nan
+
+%20) Recording channel number 8 (1 to 4 are reserved for the amplifiers. Defaults number 4 to 7).
+nan
+
+%21) Recording channel number 9 (1 to 4 are reserved for the amplifiers. Defaults number 4 to 7).
+nan
+
+%22) Recording channel number 10 (1 to 4 are reserved for the amplifiers. Defaults number 4 to 7).
+nan
+
+%23) Recording channel number 11 (1 to 4 are reserved for the amplifiers. Defaults number 4 to 7).
+nan
+
+%24) Recording channel number 12 (1 to 4 are reserved for the amplifiers. Defaults number 4 to 7).
+nan
+
+%25) Analog output channel number 1: Enter "nan" if you don't want to use AO, or the channel number using NIDAQ nomenclature (0 to 3 for PCI 6959).
+nan
+
+%26) Analog output channel number 2: Enter "nan" if you don't want to use AO, or the channel number using NIDAQ nomenclature (0 to 3 for PCI 6959).
+nan
+
+%27) Analog output channel number 3: Enter "nan" if you don't want to use AO, or the channel number using NIDAQ nomenclature (0 to 3 for PCI 6959).
+nan
+
+%28) Analog output channel number 4: Enter "nan" if you don't want to use AO, or the channel number using NIDAQ nomenclature (0 to 3 for PCI 6959).
+nan
+
+%29) Default location of stimulation files
+C:\Program Files\acq\stims\
+
+%30) Default stimulation file for analog output channel number 1: ?=no file.
+?
+
+%31) Default stimulation file for analog output channel number 2: ?=no file.
+?
+
+%32) Default stimulation file for analog output channel number 3: ?=no file.
+?
+
+%33) Default stimulation file for analog output channel number 4: ?=no file.
+?
+
+%34) Analog input channel that triggers acquisition using NIDAQ nomenclature (0 to 31 for PCI 6959).
+16
+
+%35) Trigger threshold level. This is Volts into the trigger channel.
+1
+
+%36) Length, in ms, of the pre/post-trigger (negative values for pre-triggers and positive values for post-triggers).
+0
+
+%37) Default trigger condition: 1=Rising 2=Falling
+1
+
+%38) Default trigger mode. Valid values (use all capitals): AO, AI, PFI, NONE.
+NONE
+
+%39) Series resistance calculation: 1=Performs the calculation 0=It does not calculate Rs
+0
+
+%40) Input resistance calculation: 1=Performs the calculation 0=It does not calculate Ri
+0
+
+%41) Membrane capacitance calculation: 1=Performs the calculation 0=It does not calculate Cm
+0
+
+%42) Length of the baseline for Rs, Ri and Cm calculation in recording mode (in ms).
+20
+
+%43) Default folder to save acquisition files (without last "\").
+D:\Electrophysiology\Emiliano
+
+
+%44) Default recording mode. 1=Do not record. 0=Record.
+1
+
+%45) Duration, in ms, of the pulse sent by the "Stimulation" button. Minimum is 0.1ms.
+0.2
+
+%46) Analog output used by the "Stimulation" button using NIDAQ nomenclature (0 to 3 for PCI 6959).
+1
+
+%47) Acquisition rate for Recording in Hz.
+10000
+
+%48) Analog output channel to use for seal test (to use the amplifier test pulse enter nan)
+0
+
+%49) Start of the test pulse for Rs, Ri and Cm calculation in recording mode (in ms after the start of the sweep).
+20
+
+%50) ERV Physiology Scope window position. This 4 number vector lets you customize the window size and position. Use [0] for the default position.
+[0]
+
+%51) ERV Physiology Recorder window position. This 4 number vector lets you customize the window size and position. Use [0] for the default position.
+[0]

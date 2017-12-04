@@ -1,0 +1,20 @@
+Changes from previous version (2015_09_17_SCANIMAGE_r3.8.1_MS - Automated Imaging):
+
+Uncaging Automation/inifile/saveInifileAFUA.m
+Uncaging Automation/mdia.fig
+Uncaging Automation/ScanAngleRois/scanloop/setupInitialImagingTimers.m
+Uncaging Automation/uncageStaggerUI.fig
+Uncaging Automation/createExperimentChart.m
+Uncaging Automation/ScanAngleRois/scanloop/preUncageDisplayFOVtimerFun.m
+Uncaging Automation/ScanAngleRois/scanloop/FOVuaInitialImaging.m
+Uncaging Automation/Callbacks/startButtonCallback.m
+Uncaging Automation/ScanAngleRois/scanloop/startFOVua.m
+Uncaging Automation/inifile/loadInifileAFUA.m
+Uncaging Automation/uncageStaggerUI.m
+etc/timeline/timeline.m
+Uncaging Automation/mdia.m
+AF/fmeasure/fmeasure.m
+AF/run_AF.m
++dabs/+sutter/MP285.m
+
+Tutorials/HTML Documentation

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ThorConfocalSettings>
+
+  <ClockSource clockSource="2" clockRate="80000000" clockEdge="1">   
+  </ClockSource>
+  <Dma bufferCount="4"/>
+
+</ThorConfocalSettings>

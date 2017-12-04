@@ -1,0 +1,122 @@
+﻿<html>
+	
+<head>
+	<title>Multi-Position Imaging</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.8.0.849">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "Scanimage 3.8.1 Uncaging Automation Tutorial.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("MultiPositionImaging");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Multi-Position Imaging</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="UsingtheSoftware.html">Using the Software</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="UsingtheSoftware.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="UsingtheSoftware.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="SinglePositionImaging.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts11">Imaging Multiple Positions</span></span></h1>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts11"><br/></span></span></h1>
+<p class="rvps2"><span class="rvts6">Follow this step-by-step tutorial to image and uncage multiple positions over a period of time. Autofocus and automatic drift correction will be used.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Note: the use of Autofocus requires imaging of multiple Z positions. If you image at least 3 Z slices every time, this is sufficient for continuous Autofocus ("Use Acquired for Autofocus"). If you prefer, you can take multiple slices of only one position, and have the program autofocus and drift-correct everything relative to that one position. This method will be described below.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;">
+<li value="1" class="rvps8"><span class="rvts6">First, set the Focus and Drift Correction parameters. Turn on the Autofocus, Multiple Positions (the circle in Imaging Mode), Continuous Drift Correction, Use Max Projection, Scan Shift, and Display AF images in the Focus and Drift Correct panel of the DIA window:</span><br/><img alt="" style="padding : 1px;" src="lib/mdiaWindow_0001_af-drift.png"></li>
+<li value="2" class="rvps8"><span class="rvts6">The Z range and step count shown in your autofocus parameters will be used when navigating to a position for the first time or when aligning FOV positions, so it should be set to a relatively wide range.</span></li>
+<li value="3" class="rvps8"><span class="rvts6">In the "Select Ref Channel" dropdown menu, select the channel that you will use to</span><span class="rvts20"> </span><span class="rvts6">collect your data. If you use Channel 1 to find your data and FLIM to collect it, set the reference channel to FLIM and make sure to turn on FLIM whenever a reference image is collected.</span></li>
+<li value="4" class="rvps8"><span class="rvts6">Select the Multiple Positions tab on top. Make sure FOV Mode ON is </span><span class="rvts20">unchecked</span><span class="rvts6">. Auto Add Ref Img should be selected, meaning a reference image will be collected as soon as you define an uncaging ROI/motor position.</span></li>
+<li value="5" class="rvps8"><span class="rvts6">Set the Imaging Zoom to the zoom value you will use while collecting data. Set your desired Slice # and Step/Slice in the Motor Controls window.</span></li>
+<li value="6" class="rvps8"><span class="rvts6"> Using the stage motor, find a position to image/uncage. When you've found a position, make sure your zoom is the same as the 'Imaging Zoom' set in DIA. If you will be imaging in FLIM, turn on FLIM here since the Reference Image should be collected from the FLIM channel. Click on "Define Uncaging ROI", and drag a ROI as you normally would when selecting an uncaging position in your Acquisition Channel. &nbsp;This action will save both your ROI and stage position, adding it to the table on the right. Repeat this for other positions, but make sure they are all in the same field of view (FOV), meaning that if you zoom all the way out (zoom=1), you can visualize them all (ignoring changes in Z). Since imaging power tends to suffer as you move away from the center of your FOV, it is ideal to have your imaging positions clustered as close together as possible.</span><br/><span class="rvts6"></span><br/><img alt="" style="padding : 1px;" src="lib/mdiaWindow_0000_multiple-positions.png"></li>
+<li value="7" class="rvps8"><span class="rvts19">If you will be uncaging, navigate to the top of the slice and hit "Set" under the Z Roof absolute (for dwell). This sets the Z roof, automatically calculating a different dwell value for each position while uncaging. Setting the Z roof can be done globally (for all positions) or locally (for each individual position) and is represented as Z depth.</span></li>
+<li value="8" class="rvps8"><span class="rvts6">Click "Setup Timeline". Set each imaging/uncaging step in the top left corner. Make sure all settings are correct before adding each step, and check your settings in the list to the right. </span></li>
+<ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;">
+<li value="1" class="rvps8"><span class="rvts6">Play with the settings in this window until everything makes sense to you.</span></li>
+<li value="2" class="rvps8"><span class="rvts6">'Uncaging' does not require duration or period and is automatically set to 'exclusive'</span></li>
+<li value="3" class="rvps8"><span class="rvts6">Exclusive steps will only allow imaging at a single location</span></li>
+<li value="4" class="rvps8"><span class="rvts6">The max number of positions imaged is set in the window above. Once a single position is finished, the next one will be located.</span></li>
+<li value="5" class="rvps8"><span class="rvts6">The timeline is saved along with your other DIA options, so after setting it up, click the save button in the DIA window.</span></li>
+<li value="6" class="rvps8"><span class="rvts6">Estimated uncaging duration does not change anything except for how your timeline looks. </span></li>
+<li value="7" class="rvps8"><span class="rvts6">Stagger time is important to make sure important parts of your imaging cycle do not overlap. play with this feature.</span></li>
+</ol></ol>
+<p class="rvps8"><img alt="" style="padding : 1px;" src="lib/mdiaWindow_0001_extraPosition.png"></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;">
+<li value="9" class="rvps8"><span class="rvts19">To view your reference images, click on "Ref Images". This will bring up a window where you can look at the images and the relative positions of the ROI. If you wish, you can update your reference images here later.</span><br/><span class="rvts19"></span><br/><img alt="" style="padding : 1px;" src="lib/NewItem17.png"></li>
+<li value="10" class="rvps8"><span class="rvts19">Keep the first two options selected. Click on "Threshold Cell Perimeter" to find a threshold value which will accurately estimate the perimeter of your cell. If "Correct ROIs before uncaging" is selected, the ROI will be placed on the closest point of this perimeter immediately before uncaging. This only needs to be done once, as the same perimeter calculation should work for all your positions.</span></li>
+<li value="11" class="rvps8"><span class="rvts19">In the DIA window, select "FOV mode ON". </span><span class="rvts21">From this point on, DO NOT MANUALLY MOVE YOUR XY MOTOR - ONLY Z. </span><span class="rvts19">Click on Group by FOV.</span></li>
+<li value="12" class="rvps8"><span class="rvts19">The labeled squares represent your saved positions in relative space. Click on Add FOV. The large red square shows your entire FOV. Drag it to include all your imaging positions and have them as close to the center as possible. Click "Save FOV(s) and Translate Motor Positions. The FOV square will turn black. From now on, all your positions will have the same XY motor coordinates (the coordinates of the FOV), but each position will have its own Scan Shift coordinates. Essentially, the microscope will move the laser to these positions without actually moving the XY motor. The Z motor value for each position will still be different.</span><br/><span class="rvts19"></span><br/><img alt="" style="padding : 1px;" src="lib/NewItem19.png"></li>
+<li value="13" class="rvps8"><span class="rvts19">Now, you need to accurately align these newly translated positions to their reference images. This can be done automatically by click "align Positions to FOV". </span></li>
+<li value="14" class="rvps8"><span class="rvts19">Close the FOVgui window. To manually align your positions, click again on the Ref Images &gt;&gt; button. Click on a position to see its reference image. Now, in the DIA window, select the same position and click "ScanShift GoTo". This position should have the same image as its reference image, but you </span><span class="rvts21">cannot</span><span class="rvts19"> correct it using the </span><span class="rvts21">XY motor</span><span class="rvts19">. Start your FOCUS imaging. Using the Z motor and Scan Shift control (in the Main Controls window), match the acquired image to that see in the Ref Images window. The 4 arrows move the image by a set step size, while the CT button centers the image on a certain point (has to be used when FOCUS is off) Note - CT causes crashing on some systems. Experiment with these techniques to figure out a fast way to move around. </span><br/><span class="rvts19"></span><br/><img alt="" style="padding : 1px;" src="lib/NewItem21.png"><br/><span class="rvts19"></span><br/><span class="rvts19"></span><br/><img width="902" height="576" alt="" style="padding : 1px;" src="lib/NewItem22.png"></li>
+<li value="15" class="rvps8"><span class="rvts19">Once all your images are aligned, save your ROIs by clicking "Save ROIs". You can also save your general settings by clicking the save icon in the toolbar. </span></li>
+<li value="16" class="rvps8"><span class="rvts19">You can time a round of imaging by clicking "Grab and Time FOV1". This will run 1 round of imaging, and inform you of how long everything takes in matlab's command window. </span></li>
+<li value="17" class="rvps8"><span class="rvts19">Click on Specimen Info and fill in any information which you wish to be saved with your imaging session. this info will be saved to a text file once imaging starts.</span></li>
+<li value="18" class="rvps8"><span class="rvts19">If you wish to use page controls mode, select Page acq in DIA. this will turn on pageControls right before uncaging.</span></li>
+<li value="19" class="rvps8"><span class="rvts19">Check all your options once again and click Start. Whenever Autofocus runs, a window will pop up showing the images used for autofocus, the ROI which the autofocus routine used (red square), and the best-focused position (Green Square). The Z value reflects the absolute motor Z position. Once 'START' is hit, timeline parameters can't be changed.</span><br/><span class="rvts19"></span><br/><img alt="" style="padding : 1px;" src="lib/NewItem14.png"></li>
+<li value="20" class="rvps8"><span class="rvts19">Images are organized into different folders based on their position. Once imaging is done, spc images are copied into a folder called "renumbered" to assist in future analysis.</span></li>
+</ol>
+<p></p>
+<p class="rvps5"><span class="rvts12">Created with the Personal Edition of HelpNDoc: </span><a class="rvts13" href="http://www.helpndoc.com/create-epub-ebooks">Free EPub producer</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; Michael Smirnov, Max Planck Florida Institute for Neuroscience. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

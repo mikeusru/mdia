@@ -1,0 +1,282 @@
+structure state
+   structure internal
+      maxNumFramesBuffered=Inf
+      maxNumFramesStreaming=20
+      structure eom
+      endstructure
+      defaultImageTargetGUI=1
+      fineAcqDelayAdjust=0
+      colormapSelected=1
+      averageSamples=0
+      colormapSaturationFraction=0.05
+      highPixelValue1=16384
+      lowPixelValue1=0
+      highPixelValue2=3072
+      lowPixelValue2=0
+      highPixelValue3=500
+      lowPixelValue3=0
+      highPixelValue4=500
+      lowPixelValue4=0
+      figureWidth1=454
+      figureHeight1=433
+      figurePositionX1=863
+      figurePositionY1=589
+      figureColormap1='$scim_colorMap(''gray'',8,5)'
+      figureWidth2=457
+      figureHeight2=442
+      figurePositionX2=1336
+      figurePositionY2=584
+      figureColormap2='$scim_colorMap(''gray'',8,5)'
+      figureWidth3=265
+      figureHeight3=265
+      figurePositionX3=691
+      figurePositionY3=318
+      figureColormap3='$scim_colorMap(''gray'',8,5)'
+      figureWidth4=265
+      figureHeight4=265
+      figurePositionX4=963
+      figurePositionY4=318
+      figureColormap4='$scim_colorMap(''gray'',8,5)'
+      maxfigureWidth1=265
+      maxfigureHeight1=265
+      maxfigurePositionX1=73
+      maxfigurePositionY1=99
+      maxfigureWidth2=265
+      maxfigureHeight2=265
+      maxfigurePositionX2=352
+      maxfigurePositionY2=99
+      maxfigureWidth3=265
+      maxfigureHeight3=265
+      maxfigurePositionX3=748
+      maxfigurePositionY3=57
+      maxfigureWidth4=265
+      maxfigureHeight4=265
+      maxfigurePositionX4=1106
+      maxfigurePositionY4=57
+      mergefigureWidth=265
+      mergefigureHeight=265
+      mergefigurePositionX=40
+      mergefigurePositionY=412
+      roiDisplayGUIBottom=30.9230769230769
+      roiDisplayGUILeft=168.4
+      roiDisplayGUIVisible='off'
+      imageControlsBottom=53.2307692307692
+      imageControlsLeft=112.8
+      imageControlsVisible='on'
+      channelGUIBottom=41.8461538461538
+      channelGUILeft=125.2
+      channelGUIVisible='off'
+      motorControlsBottom=42.3076923076923
+      motorControlsLeft=7.8
+      motorControlsVisible='on'
+      cycleGUIBottom=39.3076923076923
+      cycleGUILeft=103.8
+      cycleGUIVisible='off'
+      mainControlsBottom=60
+      mainControlsLeft=8.2
+      mainControlsVisible='on'
+      videoControlsGUIBottom=[]
+      videoControlsGUILeft=[]
+      videoControlsVisible=[]
+      userFcnGUIBottom=60.2307692307692
+      userFcnGUILeft=71.8
+      userFcnGUIVisible='off'
+      roiCycleGUIBottom=[]
+      roiCycleGUILeft=[]
+      roiCycleGUIVisible=[]
+      userPreferenceGUIBottom=51.7692307692308
+      userPreferenceGUILeft=208.2
+      userPreferenceGUIVisible='off'
+      powerControlBottom=39.5384615384615
+      powerControlLeft=113.8
+      powerControlVisible='on'
+      powerTransitionsBottom=55.8461538461538
+      powerTransitionsLeft=71.8
+      powerTransitionsVisible='off'
+      powerBoxBottom=40.2307692307692
+      powerBoxLeft=128.8
+      configurationControlsBottom=66.6153846153846
+      configurationControlsLeft=103.8
+      alignGUIBottom=70.6923076923077
+      alignGUILeft=105
+      fastConfigurationGUIBottom=23.8461538461538
+      fastConfigurationGUILeft=85.2
+      clockExportGUIBottom=25.2307692307692
+      clockExportGUILeft=1.2
+      roiGUIBottom=6.46153846153846
+      roiGUILeft=3.6
+      roiGUIVisible='off'
+      positionGUIBottom=29.3076923076923
+      positionGUILeft=103.8
+      positionGUIVisible='off'
+   endstructure
+   structure init
+      structure eom
+         structure laserFunctionPanel
+         endstructure
+         structure powerTransitions
+            useBinaryTransitions=0
+         endstructure
+         structure uncagingPulseImporter
+         endstructure
+         structure powerBoxStepper
+         endstructure
+         structure uncagingMapper
+         endstructure
+         structure powerBox
+         endstructure
+         focusLaserList=', PockelsCell-1, PockelsCell-2'
+         grabLaserList=', PockelsCell-1, PockelsCell-2'
+         snapLaserList=', PockelsCell-1, PockelsCell-2'
+         autoSelectFullWidthPowerBox=0
+         updatePowerContinuously=0
+         directMode=0
+         allowSliderDuringFocus=1
+         usePowerArray=0
+         powerLzStoredArray=Inf
+         powerLzOverride=0
+      endstructure
+      autoReadPMTOffsets=0
+      autoReadZoom=0
+      hotKeysNeedCtl=1
+      fastConfigHotKeysNeedCtl=1
+   endstructure
+   structure userFcns
+      userFcnBindingsUSR1='{abortAcquisitionEnd| C:\Users\yasudalab\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\FLIM\FLIMimage\FLIM_Measurement.m| | 1| acquisitionDone| C:\Users\yasudalab\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\FLIM\FLIMimage\FLIM_Measurement.m| | 1| acquisitionStarting| C:\Users\yasudalab\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\FLIM\FLIMimage\FLIM_Measurement.m| | 1| focusStart| C:\Users\yasudalab\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\FLIM\FLIMimage\FLIM_Measurement.m| | 1| frameAcquired| C:\Users\yasudalab\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\FLIM\FLIMimage\FLIM_Measurement.m| | 1| sliceDone| C:\Users\yasudalab\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\FLIM\FLIMimage\FLIM_Measurement.m| | 1| startTriggerReceived| C:\Users\yasudalab\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\FLIM\FLIMimage\FLIM_Measurement.m| | 1| stripeAcquired| C:\Users\yasudalab\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\FLIM\FLIMimage\FLIM_Measurement.m| | 1| }'
+      userFcnBindingsUSR2=[]
+      userFcnBindingsUSR3=[]
+      userFcnBindingsUSR4=[]
+      userFcnBindingsUSR5=[]
+      userFcnBindingsUSR6=[]
+      userFcnBindingsUSR7=[]
+      userFcnBindingsUSR8=[]
+      userFcnBindingsUSR9=[]
+      userFcnBindingsUSR10=[]
+      userFcnBindingsUSRONLY='{appOpen| C:\Users\yasudalab\Documents\MATLAB\Misha\15-02-18 - Scanimage\start_spc_FLIMImage_yphys_AF.m| | 1| }'
+      userFcnBindingsOVERRIDEUSR=[]
+   endstructure
+   structure motor
+      motorZEnable=0
+      stackEndpointsDominate=1
+   endstructure
+   structure shutter
+   endstructure
+   configPath='C:\Users\yasudalab\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\ScanImage\init_files\'
+   configName='img128_2ms'
+   structure software
+   endstructure
+   structure acq
+      externalTriggerTimeout=Inf
+      infiniteFocus=0
+      numAvgFramesDisplay=6
+      lockAvgFrames=0
+      numberOfFramesSnap=1
+      stackParkBetweenSlices=1
+      imageBox=0
+      roiCalibrationFactor=1
+      roiPhaseCorrection=1
+      pmtOffsetAutoSubtractChannel1=0
+      pmtOffsetAutoSubtractChannel2=0
+      pmtOffsetAutoSubtractChannel3=0
+      pmtOffsetAutoSubtractChannel4=0
+      mergeColor1=2
+      mergeColor2=1
+      mergeColor3=4
+      mergeColor4=5
+      maxMode=0
+      channelMerge=0
+      mergeFocusOnly=1
+      structure clockExport
+         exportOnFocus=1
+      endstructure
+   endstructure
+   structure video
+   endstructure
+   structure userFcnGUI
+      UserFcnPath=''
+   endstructure
+   structure files
+      fastConfig1=''
+      fastConfig2=''
+      fastConfig3=''
+      fastConfig4=''
+      fastConfig5=''
+      fastConfig6=''
+      lastFastConfigPath=''
+      fastConfigAutoStartArray='[0 0 0 0 0 0]'
+      fastConfigAutoStartTypeArray='{GRAB| GRAB| GRAB| GRAB| GRAB| GRAB| }'
+      rootSavePath='C:\Users\yasudalab\Documents\data'
+      rootPathIsDefault=0
+   endstructure
+   structure cycle
+      cycleOn=0
+      returnHomeAtCycleEnd=1
+      restoreOriginalConfig=1
+      autoReset=1
+   endstructure
+   structure spc
+      structure acq
+         structure SPCdata
+         endstructure
+         structure timer
+         endstructure
+         structure SPCModInfo
+         endstructure
+      endstructure
+      structure init
+         structure eom
+         endstructure
+      endstructure
+      structure internal
+      endstructure
+      structure files
+      endstructure
+      structure yphys
+      endstructure
+   endstructure
+   structure yphys
+      structure acq
+      endstructure
+      structure init
+         structure eom
+         endstructure
+      endstructure
+      structure shutter
+      endstructure
+      structure internal
+      endstructure
+      structure timer
+      endstructure
+   endstructure
+   structure yhys
+      structure init
+      endstructure
+   endstructure
+endstructure
+structure SI3
+obj.roiAngleToMicronsFactor = 1
+obj.roiUseMIPForMRI = true
+obj.roiShowMarkerNumbers = true
+obj.roiGotoOnAdd = true
+obj.roiSnapOnAdd = false
+obj.roiGotoOnSelect = true
+obj.roiSnapOnSelect = false
+obj.roiShowAbsoluteCoords = false
+obj.roiBaseConfigStruct.type = 'square'
+obj.roiBaseConfigStruct.parentROIID = 0
+obj.roiBaseConfigStruct.positionID = 0
+obj.roiBaseConfigStruct.RSPs.zoomFactor = 30
+obj.roiBaseConfigStruct.RSPs.scanShiftFast = 0
+obj.roiBaseConfigStruct.RSPs.scanShiftSlow = 0
+obj.roiBaseConfigStruct.RSPs.scanRotation = 0
+obj.roiBaseConfigStruct.RSPs.scanAngleMultiplierFast = 1
+obj.roiBaseConfigStruct.RSPs.scanAngleMultiplierSlow = 1
+obj.roiWarnOnMove = true
+obj.roiDisplayedChannel = '1'
+obj.roiDisplayDepth = Inf
+obj.posnIgnoreSecZ = false
+obj.roiPositionToleranceX = 1
+obj.roiPositionToleranceY = 1
+obj.roiPositionToleranceZ = 1
+obj.roiPositionToleranceZZ = Inf
+endstructure

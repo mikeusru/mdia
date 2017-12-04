@@ -1,0 +1,9 @@
+function yphys_roiDelete;
+global spc
+global gh
+
+roiN = str2num(get(gco, 'Tag'));
+delete(gui.spc.figure.yphys_roiText(roiN));
+delete(gui.spc.figure.yphys_roi(roiN));
+gui.spc.figure.yphys_roi(roiN) = [];
+gh.spc.figure.yphys_roiText(roiN) = [];
