@@ -9,23 +9,23 @@ structure state
       colormapSelected=1
       averageSamples=0
       colormapSaturationFraction=0.05
-      highPixelValue1=4609.024
-      lowPixelValue1=2559.9805
-      highPixelValue2=500
+      highPixelValue1=8366.2848
+      lowPixelValue1=0
+      highPixelValue2=3072
       lowPixelValue2=0
       highPixelValue3=500
       lowPixelValue3=0
       highPixelValue4=500
       lowPixelValue4=0
-      figureWidth1=439
-      figureHeight1=430
-      figurePositionX1=559
-      figurePositionY1=616
+      figureWidth1=437
+      figureHeight1=433
+      figurePositionX1=1020
+      figurePositionY1=615
       figureColormap1='$scim_colorMap(''gray'',8,5)'
-      figureWidth2=434
-      figureHeight2=430
-      figurePositionX2=1027
-      figurePositionY2=621
+      figureWidth2=433
+      figureHeight2=434
+      figurePositionX2=1478
+      figurePositionY2=612
       figureColormap2='$scim_colorMap(''gray'',8,5)'
       figureWidth3=265
       figureHeight3=265
@@ -37,14 +37,14 @@ structure state
       figurePositionX4=963
       figurePositionY4=318
       figureColormap4='$scim_colorMap(''gray'',8,5)'
-      maxfigureWidth1=249
-      maxfigureHeight1=248
-      maxfigurePositionX1=304
-      maxfigurePositionY1=87
-      maxfigureWidth2=264
-      maxfigureHeight2=261
-      maxfigurePositionX2=14
-      maxfigurePositionY2=78
+      maxfigureWidth1=265
+      maxfigureHeight1=265
+      maxfigurePositionX1=11
+      maxfigurePositionY1=78
+      maxfigureWidth2=265
+      maxfigureHeight2=265
+      maxfigurePositionX2=297
+      maxfigurePositionY2=76
       maxfigureWidth3=265
       maxfigureHeight3=265
       maxfigurePositionX3=748
@@ -60,20 +60,20 @@ structure state
       roiDisplayGUIBottom=30.9230769230769
       roiDisplayGUILeft=168.4
       roiDisplayGUIVisible='off'
-      imageControlsBottom=29.2307692307692
-      imageControlsLeft=1
+      imageControlsBottom=16.5384615384615
+      imageControlsLeft=203.8
       imageControlsVisible='on'
-      channelGUIBottom=43.2307692307692
-      channelGUILeft=70.6
+      channelGUIBottom=41.8461538461538
+      channelGUILeft=125.2
       channelGUIVisible='off'
-      motorControlsBottom=44.3846153846154
-      motorControlsLeft=52.8
+      motorControlsBottom=43.5384615384615
+      motorControlsLeft=2.4
       motorControlsVisible='on'
       cycleGUIBottom=39.3076923076923
       cycleGUILeft=103.8
       cycleGUIVisible='off'
-      mainControlsBottom=60.6153846153846
-      mainControlsLeft=1.6
+      mainControlsBottom=60.7692307692308
+      mainControlsLeft=2
       mainControlsVisible='on'
       videoControlsGUIBottom=[]
       videoControlsGUILeft=[]
@@ -87,16 +87,16 @@ structure state
       userPreferenceGUIBottom=47.5384615384615
       userPreferenceGUILeft=201.4
       userPreferenceGUIVisible='off'
-      powerControlBottom=29.4615384615385
-      powerControlLeft=52.2
+      powerControlBottom=29.3846153846154
+      powerControlLeft=2.2
       powerControlVisible='on'
       powerTransitionsBottom=55.8461538461538
       powerTransitionsLeft=71.8
       powerTransitionsVisible='off'
       powerBoxBottom=40.2307692307692
       powerBoxLeft=128.8
-      configurationControlsBottom=67.2307692307692
-      configurationControlsLeft=99.2
+      configurationControlsBottom=67.9230769230769
+      configurationControlsLeft=100.2
       alignGUIBottom=70.6923076923077
       alignGUILeft=105
       fastConfigurationGUIBottom=23.8461538461538
@@ -125,9 +125,9 @@ structure state
          endstructure
          structure powerBox
          endstructure
-         focusLaserList=', PockelsCell-1, PockelsCell-2'
-         grabLaserList=', PockelsCell-1, PockelsCell-2'
-         snapLaserList=', PockelsCell-1, PockelsCell-2'
+         focusLaserList=', PockelsCell-1, PockelsCell-2, PockelsCell-3'
+         grabLaserList=', PockelsCell-1, PockelsCell-2, PockelsCell-3'
+         snapLaserList=', PockelsCell-1, PockelsCell-2, PockelsCell-3'
          autoSelectFullWidthPowerBox=0
          updatePowerContinuously=0
          directMode=0
@@ -142,7 +142,7 @@ structure state
       fastConfigHotKeysNeedCtl=1
    endstructure
    structure userFcns
-      userFcnBindingsUSR1='{abortAcquisitionEnd| C:\Users\yasudalab\Documents\MATLAB\development\SCANIMAGE_r3.8.2\FLIM\FLIMimage\FLIM_Measurement.m| | 1| abortAcquisitionStart| C:\Users\yasudalab\Documents\MATLAB\development\SCANIMAGE_r3.8.2\FLIM\FLIMimage\FLIM_Measurement.m| | 1| acquisitionDone| C:\Users\yasudalab\Documents\MATLAB\development\SCANIMAGE_r3.8.2\FLIM\FLIMimage\FLIM_Measurement.m| | 1| acquisitionStarted| C:\Users\yasudalab\Documents\MATLAB\development\SCANIMAGE_r3.8.2\FLIM\FLIMimage\FLIM_Measurement.m| | 1| acquisitionStarting| C:\Users\yasudalab\Documents\MATLAB\development\SCANIMAGE_r3.8.2\FLIM\FLIMimage\FLIM_Measurement.m| | 1| cycleIterating| C:\Users\yasudalab\Documents\MATLAB\development\SCANIMAGE_r3.8.2\FLIM\FLIMimage\FLIM_Measurement.m| | 1| focusDone| C:\Users\yasudalab\Documents\MATLAB\development\SCANIMAGE_r3.8.2\FLIM\FLIMimage\FLIM_Measurement.m| | 1| focusStart| C:\Users\yasudalab\Documents\MATLAB\development\SCANIMAGE_r3.8.2\FLIM\FLIMimage\FLIM_Measurement.m| | 1| frameAcquired| C:\Users\yasudalab\Documents\MATLAB\development\SCANIMAGE_r3.8.2\FLIM\FLIMimage\FLIM_Measurement.m| | 1| loopModeDone| C:\Users\yasudalab\Documents\MATLAB\development\SCANIMAGE_r3.8.2\FLIM\FLIMimage\FLIM_Measurement.m| | 1| motorPositionUpdated| C:\Users\yasudalab\Documents\MATLAB\development\SCANIMAGE_r3.8.2\FLIM\FLIMimage\FLIM_Measurement.m| | 1| nextTriggerReceived| C:\Users\yasudalab\Documents\MATLAB\development\SCANIMAGE_r3.8.2\FLIM\FLIMimage\FLIM_Measurement.m| | 1| sliceDone| C:\Users\yasudalab\Documents\MATLAB\development\SCANIMAGE_r3.8.2\FLIM\FLIMimage\FLIM_Measurement.m| | 1| startTriggerReceived| C:\Users\yasudalab\Documents\MATLAB\development\SCANIMAGE_r3.8.2\FLIM\FLIMimage\FLIM_Measurement.m| | 1| stripeAcquired| C:\Users\yasudalab\Documents\MATLAB\development\SCANIMAGE_r3.8.2\FLIM\FLIMimage\FLIM_Measurement.m| | 1| }'
+      userFcnBindingsUSR1='{abortAcquisitionEnd| C:\Users\yasudalab.MPFI\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\FLIM\FLIMimage\FLIM_Measurement.m| | 1| acquisitionDone| C:\Users\yasudalab.MPFI\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\FLIM\FLIMimage\FLIM_Measurement.m| | 1| acquisitionStarting| C:\Users\yasudalab.MPFI\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\FLIM\FLIMimage\FLIM_Measurement.m| | 1| focusStart| C:\Users\yasudalab.MPFI\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\FLIM\FLIMimage\FLIM_Measurement.m| | 1| frameAcquired| C:\Users\yasudalab.MPFI\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\FLIM\FLIMimage\FLIM_Measurement.m| | 1| sliceDone| C:\Users\yasudalab.MPFI\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\FLIM\FLIMimage\FLIM_Measurement.m| | 1| startTriggerReceived| C:\Users\yasudalab.MPFI\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\FLIM\FLIMimage\FLIM_Measurement.m| | 1| stripeAcquired| C:\Users\yasudalab.MPFI\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\FLIM\FLIMimage\FLIM_Measurement.m| | 1| }'
       userFcnBindingsUSR2=[]
       userFcnBindingsUSR3=[]
       userFcnBindingsUSR4=[]
@@ -152,8 +152,8 @@ structure state
       userFcnBindingsUSR8=[]
       userFcnBindingsUSR9=[]
       userFcnBindingsUSR10=[]
-      userFcnBindingsUSRONLY='{appOpen| C:\Users\yasudalab\Documents\MATLAB\development\SCANIMAGE_r3.8.2\start_spc_FLIMImage_yphys_AF.m| | 1| }'
-      userFcnBindingsOVERRIDEUSR={}
+      userFcnBindingsUSRONLY='{appOpen| C:\Users\yasudalab.MPFI\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\start_spc_FLIMImage_yphys_AF.m| | 1| }'
+      userFcnBindingsOVERRIDEUSR=[]
    endstructure
    structure motor
       motorZEnable=0
@@ -161,14 +161,14 @@ structure state
    endstructure
    structure shutter
    endstructure
-   configPath='C:\Users\yasudalab\Documents\MATLAB\development\SCANIMAGE_r3.8.2\ScanImage\init_files'
+   configPath='C:\Users\yasudalab.MPFI\Documents\MATLAB\SCANIMAGE_r3.8.1_MS\ScanImage\init_files'
    configName='img128_2ms'
    structure software
    endstructure
    structure acq
       externalTriggerTimeout=Inf
       infiniteFocus=0
-      numAvgFramesDisplay=1
+      numAvgFramesDisplay=6
       lockAvgFrames=0
       numberOfFramesSnap=1
       stackParkBetweenSlices=0
@@ -245,6 +245,8 @@ structure state
       endstructure
    endstructure
    structure yhys
+      structure init
+      endstructure
    endstructure
 endstructure
 structure SI3
@@ -259,7 +261,7 @@ obj.roiShowAbsoluteCoords = false
 obj.roiBaseConfigStruct.type = 'square'
 obj.roiBaseConfigStruct.parentROIID = 0
 obj.roiBaseConfigStruct.positionID = 0
-obj.roiBaseConfigStruct.RSPs.zoomFactor = 4
+obj.roiBaseConfigStruct.RSPs.zoomFactor = 120
 obj.roiBaseConfigStruct.RSPs.scanShiftFast = 0
 obj.roiBaseConfigStruct.RSPs.scanShiftSlow = 0
 obj.roiBaseConfigStruct.RSPs.scanRotation = 0
